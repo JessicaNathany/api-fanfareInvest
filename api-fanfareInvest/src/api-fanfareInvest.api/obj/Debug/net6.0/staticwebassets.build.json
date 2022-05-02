@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NM+scRJgddoCTvFQW6xN06CjSCayQYcbPV3Hr70up4g=",
+  "Source": "api-fanfareInvest.api",
+  "BasePath": "_content/api-fanfareInvest.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
