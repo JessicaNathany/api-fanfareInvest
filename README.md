@@ -27,6 +27,13 @@ api-fanfareInvest esta API consulta investimentos. 💵​📈​
 	- xUnit Ferramenta para testes de unidade
 	- Docker
 
+
+  ## Mocks
+  	- Tesouro Direto: (https://run.mocky.io/v3/52ad684e-30a4-4a45-9c88-3b18169c6137)
+        - Renda Fixa: (https://run.mocky.io/v3/31da374a-18c1-4d19-8d94-3507abb54abb)
+        - Renda Variável: (https://run.mocky.io/v3/4fcc8f18-8ab7-4a36-abc1-f466566e9785)
+        - Fundos: (https://run.mocky.io/v3/7ac36199-db5c-4d21-bc8a-74fe91fa43b1)
+
 <hr />
 
 # api-fanfareInvest
@@ -59,3 +66,10 @@ api-fanfareInvest this APIs investiment consulting. 💵​📈​
 	- Moq unit tests
 	- Framework xUnit  for unit tests
 	- Docker
+
+
+  ## Mocks
+  	- Direct Treasury: (https://run.mocky.io/v3/52ad684e-30a4-4a45-9c88-3b18169c6137)
+        - Fixed Income: (https://run.mocky.io/v3/31da374a-18c1-4d19-8d94-3507abb54abb)
+        - Vaiable Rent: (https://run.mocky.io/v3/4fcc8f18-8ab7-4a36-abc1-f466566e9785)
+        - Funds: (https://run.mocky.io/v3/7ac36199-db5c-4d21-bc8a-74fe91fa43b1)
