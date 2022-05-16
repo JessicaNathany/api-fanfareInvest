@@ -1,7 +1,6 @@
 ﻿using api_fanfareInvest.api.Service;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace api_fanfareInvest.api.Controllers
 {
     [ApiController]
@@ -9,7 +8,7 @@ namespace api_fanfareInvest.api.Controllers
     public class FundController : ControllerBase
     {
         [HttpGet]
-        [Route("invest/getfund")]
+        [Route("invest/GetFundFundService")]
         public async Task<ActionResult> GetFund([FromServices] FundService service)
         {
             var response = service.Get();

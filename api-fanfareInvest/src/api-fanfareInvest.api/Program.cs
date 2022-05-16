@@ -1,16 +1,19 @@
+using api_fanfareInvest.api.Data.Interface;
+using api_fanfareInvest.api.Data.Repository;
+using api_fanfareInvest.api.IService;
+using api_fanfareInvest.api.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IFundService, FundService>();
+builder.Services.AddScoped<IFundRepository, FundRepository>();
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
