@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="IService\" />
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\api-fanfareInvest.api\api-fanfareInvest.api.csproj" />
+    <ProjectReference Include="..\api-fanfareInvest.repository\api-fanfareInvest.repository.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "NcSoo6rpq6CKHZJKr45Etyy2ZlJ68kPLE4rj13xTCJGE7jVXwK/jtSNhdTo0J9XJoOZUy6gRSXtO67I3utgkzw==",
+  "dgSpecHash": "BlfpwsoOqSgwiv6XgPohzK5ucC8ZSE0XTFt+OurjyZOU7jkOqm1WgH1BqN+jCjNg2RcSuFrfgkA196sZqhurEw==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.repository\\api-fanfareInvest.repository.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jnath\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\jnath\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\jnath\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
+    "C:\\Users\\jnath\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\jnath\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\jnath\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\jnath\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\jnath\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
   "logs": []
 }

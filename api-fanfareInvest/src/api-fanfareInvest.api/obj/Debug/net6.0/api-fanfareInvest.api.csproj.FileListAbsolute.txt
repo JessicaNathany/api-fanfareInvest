@@ -25,3 +25,4 @@ C:\GitHub\api-fanfareInvest\api-fanfareInvest\src\api-fanfareInvest.api\obj\Debu
 C:\GitHub\api-fanfareInvest\api-fanfareInvest\src\api-fanfareInvest.api\obj\Debug\net6.0\api-fanfareInvest.api.pdb
 C:\GitHub\api-fanfareInvest\api-fanfareInvest\src\api-fanfareInvest.api\obj\Debug\net6.0\api-fanfareInvest.api.genruntimeconfig.cache
 C:\GitHub\api-fanfareInvest\api-fanfareInvest\src\api-fanfareInvest.api\obj\Debug\net6.0\ref\api-fanfareInvest.api.dll
+C:\GitHub\api-fanfareInvest\api-fanfareInvest\src\api-fanfareInvest.api\bin\Debug\net6.0\Newtonsoft.Json.dll
