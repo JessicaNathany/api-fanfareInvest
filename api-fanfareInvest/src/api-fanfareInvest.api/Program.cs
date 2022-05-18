@@ -9,8 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IFundService, FundService>();
-builder.Services.AddScoped<IFundRepository, FundRepository>();
-
+builder.Services.AddTransient<IFundRepository, FundRepository>();
 
 var app = builder.Build();
 
