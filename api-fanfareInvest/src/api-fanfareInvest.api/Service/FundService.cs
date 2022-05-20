@@ -7,7 +7,6 @@ namespace api_fanfareInvest.api.Service
     public class FundService : IFundService
     {
         private readonly IFundRepository _fundRepository;
-
         public FundService(IFundRepository fundRepository)
         {
             _fundRepository = fundRepository;
@@ -17,7 +16,21 @@ namespace api_fanfareInvest.api.Service
             var funds = new List<Fund>();
             var fund = new Fund();
 
-            var fundRepository = _fundRepository.Get();
+            var fundsResponse =  await _fundRepository.Get();
+
+            foreach(var fundRepository in fundsResponse)
+            {
+                foreach (var itemFund in fundRepository.Funds)
+                {
+                    fund.Name = itemFund.Name;
+                    fund.Quantity = itemFund.Quantity;
+                    fund.UnitPrice = itemFund.UnitPrice;
+                    fund.InvestedCapital = itemFund.InvestedCapital;
+                    fund.CurrentCapital = itemFund.CurrentCapital;
+                }
+            }
+
+            funds.Add(fund);
 
            return funds;
         }
