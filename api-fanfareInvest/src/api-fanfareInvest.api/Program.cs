@@ -1,3 +1,4 @@
+using api_fanfareInvest.api.ConfigDependency;
 using api_fanfareInvest.api.Data.Interface;
 using api_fanfareInvest.api.Data.Repository;
 using api_fanfareInvest.api.IService;
@@ -13,6 +14,7 @@ builder.Services.AddScoped<IFundService, FundService>();
 builder.Services.AddScoped<IFundRepository, FundRepository>();
 builder.Services.AddScoped<ITirectTreasuryService, TirectTreasuryService>();
 builder.Services.AddScoped<ITirectTreasuryRepository, TirectTreasuryRepository>();
+builder.Services.ResolveDependencies();
 
 // refactor
 
