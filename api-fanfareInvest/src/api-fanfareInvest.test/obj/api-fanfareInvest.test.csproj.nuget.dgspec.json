@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj": {}
+    "C:\\Projetos\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj": {
+    "C:\\Projetos\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj",
+        "projectUniqueName": "C:\\Projetos\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj",
         "projectName": "api-fanfareInvest.test",
-        "projectPath": "C:\\GitHub\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj",
-        "packagesPath": "C:\\Users\\jnath\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\obj\\",
+        "projectPath": "C:\\Projetos\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\api-fanfareInvest.test.csproj",
+        "packagesPath": "C:\\Users\\nadia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\api-fanfareInvest\\api-fanfareInvest\\src\\api-fanfareInvest.test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jnath\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nadia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
