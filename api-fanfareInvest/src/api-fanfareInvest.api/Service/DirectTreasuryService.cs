@@ -3,9 +3,9 @@ using api_fanfareInvest.api.Service.IService;
 
 namespace api_fanfareInvest.api.Service
 {
-    public class TirectTreasuryService : ITirectTreasuryService
+    public class DirectTreasuryService : ITirectTreasuryService
     {
-        public Task<IList<TirectTreasury>> Get()
+        public Task<IList<DirectTreasury>> Get()
         {
             throw new NotImplementedException();
         }

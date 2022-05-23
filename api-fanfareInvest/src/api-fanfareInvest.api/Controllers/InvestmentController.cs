@@ -9,6 +9,15 @@ namespace api_fanfareInvest.api.Controllers
     [Route("api-invest")]
     public class InvestmentController : ControllerBase
     {
+
+        [HttpGet]
+        [Route("/investiment/Get")]
+        public async Task<ActionResult> GetAllInvestiments([FromServices] IFundService service)
+        {
+            Task<IList<Fund>> response = service.Get();
+            return Ok(response);
+        }
+
         [HttpGet]
         [Route("/fund/Get")]
         public async Task<ActionResult> GetFund([FromServices] IFundService service)
@@ -21,7 +30,7 @@ namespace api_fanfareInvest.api.Controllers
         [Route("/tirect-treasury/Get")]
         public async Task<ActionResult> GetTirectTreasury([FromServices] ITirectTreasuryService service)
         {
-            Task<IList<TirectTreasury>> response = service.Get();
+            Task<IList<DirectTreasury>> response = service.Get();
             return Ok(response);
         }
 

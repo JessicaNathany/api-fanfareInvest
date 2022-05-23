@@ -3,7 +3,7 @@ using api_fanfareInvest.api.Response;
 
 namespace api_fanfareInvest.api.Data.Repository
 {
-    public class TirectTreasuryRepository : ITirectTreasuryRepository
+    public class DirectTreasuryRepository : IDirectTreasuryRepository
     {
         public Task<IList<TirectTreasuryResponse>> GetAsync()
         {

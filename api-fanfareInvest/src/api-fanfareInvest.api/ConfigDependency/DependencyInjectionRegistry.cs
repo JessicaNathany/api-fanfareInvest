@@ -12,8 +12,8 @@ namespace api_fanfareInvest.api.ConfigDependency
         {
             service.AddScoped<IFundService, FundService>();
             service.AddScoped<IFundRepository, FundRepository>();
-            service.AddScoped<ITirectTreasuryService, TirectTreasuryService>();
-            service.AddScoped<ITirectTreasuryRepository, TirectTreasuryRepository>();
+            service.AddScoped<ITirectTreasuryService, DirectTreasuryService>();
+            service.AddScoped<ITirectTreasuryRepository, DirectTreasuryRepository>();
             service.AddScoped<IFixedIncomeRepository, FixedIncomeRepository>();
             service.AddScoped<IVariableIncomeService, VariableIncomeService>();
             service.AddScoped<IFixedIncomeService, FixedIncomeService>();

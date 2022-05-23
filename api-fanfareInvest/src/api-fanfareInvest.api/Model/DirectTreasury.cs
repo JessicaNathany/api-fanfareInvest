@@ -1,6 +1,6 @@
 ﻿namespace api_fanfareInvest.api.Model
 {
-    public class TirectTreasury
+    public class DirectTreasury
     {
         public double InvestedCapital { get; set; }
         public double CurrentCapital { get; set; }
