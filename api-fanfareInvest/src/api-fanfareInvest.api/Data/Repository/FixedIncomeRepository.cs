@@ -7,7 +7,7 @@ namespace api_fanfareInvest.api.Data.Repository
 {
     public class FixedIncomeRepository : IFixedIncomeRepository
     {
-        public async Task<IEnumerable<FixedIncomeResponse>> Get()
+        public async Task<IEnumerable<FixedIncomeResponse>> GetAsync()
         {
             using var client = new HttpClient();
             var listFixedIncomes = new List<FixedIncomeResponse>();
@@ -15,7 +15,7 @@ namespace api_fanfareInvest.api.Data.Repository
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var response = client.GetAsync("https://run.mocky.io/v3/4fcc8f18-8ab7-4a36-abc1-f466566e9785").Result;
+            var response = client.GetAsync("https://run.mocky.io/v3/ba42dc71-9176-46d0-8ede-a21faeb5b3ba").Result;
             response.EnsureSuccessStatusCode();
 
             var result = response.Content.ReadAsStringAsync().Result;

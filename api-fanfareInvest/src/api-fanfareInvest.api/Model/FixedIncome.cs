@@ -18,3 +18,4 @@
         public string Market { get; set; }
     }
 }
+

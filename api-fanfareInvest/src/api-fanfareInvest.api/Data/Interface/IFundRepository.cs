@@ -5,6 +5,6 @@ namespace api_fanfareInvest.api.Data.Interface
 {
     public interface IFundRepository
     {
-        Task<IList<FundReponse>>Get();
+        Task<IList<FundReponse>> GetAsync();
     }
 }

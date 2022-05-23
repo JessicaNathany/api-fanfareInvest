@@ -27,7 +27,7 @@ namespace api_fanfareInvest.api.Controllers
 
         [HttpGet]
         [Route("/variableincome/Get")]
-        public async Task<ActionResult> GetFixedIncome([FromServices] IVariableIncomeService service)
+        public async Task<ActionResult> GetVariableIncome([FromServices] IVariableIncomeService service)
         {
             Task<IEnumerable<VariableIncome>> response = service.Get();
             return Ok(response);
@@ -37,7 +37,7 @@ namespace api_fanfareInvest.api.Controllers
         [Route("/fixedincome/Get")]
         public async Task<ActionResult> GetFixedIncome([FromServices] IFixedIncomeService service)
         {
-            Task<IEnumerable<FixedIncome>> response = service.Get();
+            Task<IEnumerable<FixedIncome>> response = service.GetAsync();
             return Ok(response);
         }
     }

@@ -7,7 +7,7 @@ namespace api_fanfareInvest.api.Data.Repository
 {
     public class FundRepository : IFundRepository
     {
-        public async Task<IList<FundReponse>> Get()
+        public async Task<IList<FundReponse>> GetAsync()
         {
             using var client = new HttpClient();
             var listFunds = new List<FundReponse>();

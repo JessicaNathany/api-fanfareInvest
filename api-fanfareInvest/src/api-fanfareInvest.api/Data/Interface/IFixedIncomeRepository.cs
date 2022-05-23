@@ -4,6 +4,6 @@ namespace api_fanfareInvest.api.Data.Interface
 {
     public interface IFixedIncomeRepository
     {
-        Task<IEnumerable<FixedIncomeResponse>> Get();
+        Task<IEnumerable<FixedIncomeResponse>> GetAsync();
     }
 }

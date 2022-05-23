@@ -7,7 +7,7 @@ namespace api_fanfareInvest.api.Data.Repository
 {
     public class VariableIncomeRepository : IVariableIncomeRepository
     {
-        public async Task<IEnumerable<VariableIncomeResponse>> Get()
+        public async Task<IEnumerable<VariableIncomeResponse>> GetAsync()
         {
             using var client = new HttpClient();
             var listVariableIncomes = new List<VariableIncomeResponse>();

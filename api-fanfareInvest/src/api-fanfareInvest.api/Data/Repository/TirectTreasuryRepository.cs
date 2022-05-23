@@ -5,7 +5,7 @@ namespace api_fanfareInvest.api.Data.Repository
 {
     public class TirectTreasuryRepository : ITirectTreasuryRepository
     {
-        public Task<IList<TirectTreasuryResponse>> Get()
+        public Task<IList<TirectTreasuryResponse>> GetAsync()
         {
             throw new NotImplementedException();
         }
