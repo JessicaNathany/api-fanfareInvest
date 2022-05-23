@@ -1,6 +1,5 @@
 ﻿using api_fanfareInvest.api.IService;
 using api_fanfareInvest.api.Model;
-using api_fanfareInvest.api.Service;
 using api_fanfareInvest.api.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,7 +7,7 @@ namespace api_fanfareInvest.api.Controllers
 {
     [ApiController]
     [Route("api-invest")]
-    public class FundController : ControllerBase
+    public class InvestmentController : ControllerBase
     {
         [HttpGet]
         [Route("/fund/Get")]
@@ -23,6 +22,22 @@ namespace api_fanfareInvest.api.Controllers
         public async Task<ActionResult> GetTirectTreasury([FromServices] ITirectTreasuryService service)
         {
             Task<IList<TirectTreasury>> response = service.Get();
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("/variableincome/Get")]
+        public async Task<ActionResult> GetFixedIncome([FromServices] IVariableIncomeService service)
+        {
+            Task<IEnumerable<VariableIncome>> response = service.Get();
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("/fixedincome/Get")]
+        public async Task<ActionResult> GetFixedIncome([FromServices] IFixedIncomeService service)
+        {
+            Task<IEnumerable<FixedIncome>> response = service.Get();
             return Ok(response);
         }
     }
