@@ -12,18 +12,16 @@ namespace api_fanfareInvest.test
 {
     public class FundServiceTest
     {
-        public FundServiceTest()
-        {
-            var mockFund = MockFundRepository();
-
-            var fundService = new FundService(mockFund.Object);
-
-        }
 
         [Fact]
         public void Get_Should_be_fund_is_null()
         {
-            
+            var mockFund = MockFundRepository();
+
+            var service = new FundService(mockFund.Object);
+            var result = service.Get();
+
+            Assert.Null(result);
         }
 
 
@@ -36,7 +34,7 @@ namespace api_fanfareInvest.test
             };
 
             var mockFundRepository = new Mock<IFundRepository>();
-            mockFundRepository.Setup(x => x.GetAsync());
+            mockFundRepository.Setup(x => x.GetAsync()).ReturnsAsync(fundResponse);
 
            return mockFundRepository;
         }
