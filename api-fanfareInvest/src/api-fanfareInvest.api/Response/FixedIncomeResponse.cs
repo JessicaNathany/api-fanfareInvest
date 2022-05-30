@@ -5,7 +5,7 @@ namespace api_fanfareInvest.api.Response
 {
     public class FixedIncomeResponse
     {
-        [JsonProperty("cdbs")]
+        [JsonProperty("cbs")]
         public IEnumerable<FixedIncome> FixedIncomesCDB { get; set; }
 
         [JsonProperty("lcis")]

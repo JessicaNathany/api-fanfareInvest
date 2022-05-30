@@ -1,5 +1,6 @@
 ﻿using api_fanfareInvest.api.Data.Interface;
 using api_fanfareInvest.api.Model;
+using api_fanfareInvest.api.Response;
 using api_fanfareInvest.api.Service.IService;
 
 namespace api_fanfareInvest.api.Service
@@ -17,10 +18,15 @@ namespace api_fanfareInvest.api.Service
             var fixedIncomes = new List<FixedIncome>();
             var fixedIncome = new FixedIncome();
 
-            var fixedIncomeResponses = await _fixedIncomeRepository.Get();
-      
+            var fixedIncomeResponses = await _fixedIncomeRepository.GetAsync();
 
-            foreach (var item in fixedIncomeResponses.SelectMany(s => s.lcis))
+            AssociateFixedIncomes(fixedIncomes, fixedIncomeResponses);
+            return fixedIncomes;
+        }
+
+        private static void AssociateFixedIncomes(List<FixedIncome> fixedIncomes, IEnumerable<FixedIncomeResponse> fixedIncomeResponses)
+        {
+            foreach (var item in fixedIncomeResponses.SelectMany(s => s.FixedIncomesLCI))
             {
                 fixedIncomes.Add(new FixedIncome
                 {
@@ -40,7 +46,8 @@ namespace api_fanfareInvest.api.Service
                     Market = item.Market
 
                 });
-                foreach (var item1 in fixedIncomeResponses.SelectMany(s => s.cbs))
+
+                foreach (var item1 in fixedIncomeResponses.SelectMany(s => s.FixedIncomesCDB))
                 {
                     fixedIncomes.Add(new FixedIncome
                     {
@@ -61,9 +68,7 @@ namespace api_fanfareInvest.api.Service
 
                     });
                 }
-               
-            }            
-            return fixedIncomes;
+            }
         }
     }
 }

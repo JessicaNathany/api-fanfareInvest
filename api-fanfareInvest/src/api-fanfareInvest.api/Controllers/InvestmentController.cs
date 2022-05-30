@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 namespace api_fanfareInvest.api.Controllers
 {
     [ApiController]
-    [Route("api-invest")]
+    [Route("api-invest/investiment")]
     public class InvestmentController : ControllerBase
     {
 
         [HttpGet]
-        [Route("/investiment/Get")]
+        [Route("/investiment/GetAll")]
         public async Task<ActionResult> GetAllInvestiments([FromServices] IFundService service)
         {
-            Task<IList<Fund>> response = service.Get();
+            Task<IList<Fund>> response = service.Get(); // refatorar para trazer todos investimentos
             return Ok(response);
         }
 
@@ -27,7 +27,7 @@ namespace api_fanfareInvest.api.Controllers
         }
 
         [HttpGet]
-        [Route("/tirect-treasury/Get")]
+        [Route("/direct-treasury/Get")]
         public async Task<ActionResult> GetTirectTreasury([FromServices] ITirectTreasuryService service)
         {
             Task<IList<DirectTreasury>> response = service.Get();
@@ -35,7 +35,7 @@ namespace api_fanfareInvest.api.Controllers
         }
 
         [HttpGet]
-        [Route("/variableincome/Get")]
+        [Route("/variable-income/Get")]
         public async Task<ActionResult> GetVariableIncome([FromServices] IVariableIncomeService service)
         {
             Task<IEnumerable<VariableIncome>> response = service.Get();
@@ -43,7 +43,7 @@ namespace api_fanfareInvest.api.Controllers
         }
 
         [HttpGet]
-        [Route("/fixedincome/Get")]
+        [Route("/fixed-income/Get")]
         public async Task<ActionResult> GetFixedIncome([FromServices] IFixedIncomeService service)
         {
             Task<IEnumerable<FixedIncome>> response = service.GetAsync();
