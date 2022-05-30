@@ -4,6 +4,6 @@ namespace api_fanfareInvest.api.Data.Interface
 {
     public interface IDirectTreasuryRepository
     {
-        Task<IList<TirectTreasuryResponse>> GetAsync();
+        Task<IList<DirectTreasuryResponse>> GetAsync();
     }
 }

@@ -18,7 +18,10 @@ namespace api_fanfareInvest.api.Service
 
             var fundsResponse =  await _fundRepository.GetAsync();
 
-            foreach(var fundRepository in fundsResponse)
+            if (fundsResponse == null)
+                funds = null;
+
+            foreach (var fundRepository in fundsResponse)
             {
                 foreach (var itemFund in fundRepository.Funds)
                 {
