@@ -17,17 +17,16 @@ namespace api_fanfareInvest.api.Service
             var variableIncome = new VariableIncome();
 
             var variableIncomeResponse = await _variableIncomeRepository.Get();
-
-            foreach (var variableIncomeRepository in variableIncomeResponse)
+            foreach (var item in variableIncomeResponse.SelectMany(s => s.VariableRent))
             {
-                foreach (var item in variableIncomeRepository.VariableIncomes)
+                variableIncomes.Add(new VariableIncome
                 {
-                    variableIncome.InvestedCapital = item.InvestedCapital;
-                    variableIncome.CurrentCapital = item.CurrentCapital;
-                    variableIncome.Quantity = item.Quantity;
-                    variableIncome.Name = item.Name;
-                    variableIncome.UnitPrice = item.UnitPrice;
-                }
+                    InvestedCapital = item.InvestedCapital,
+                    CurrentCapital = item.CurrentCapital,
+                    Quantity = item.Quantity,
+                    Name = item.Name,
+                    UnitPrice = item.UnitPrice
+                });
             }
 
             variableIncomes.Add(variableIncome);

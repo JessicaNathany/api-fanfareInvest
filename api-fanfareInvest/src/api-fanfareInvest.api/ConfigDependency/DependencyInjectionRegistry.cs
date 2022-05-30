@@ -14,6 +14,10 @@ namespace api_fanfareInvest.api.ConfigDependency
             service.AddScoped<IFundRepository, FundRepository>();
             service.AddScoped<ITirectTreasuryService, TirectTreasuryService>();
             service.AddScoped<ITirectTreasuryRepository, TirectTreasuryRepository>();
+            service.AddScoped<IFixedIncomeRepository, FixedIncomeRepository>();
+            service.AddScoped<IVariableIncomeRepository, VariableIncomeRepository>();
+            service.AddScoped<IFixedIncomeService, FixedIncomeService>();
+            service.AddScoped<IVariableIncomeService, VariableIncomeService>();
         }
     }
 }

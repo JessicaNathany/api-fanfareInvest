@@ -4,6 +4,7 @@ namespace api_fanfareInvest.api.Response
 {
     public class FixedIncomeResponse
     {
-        public IEnumerable<FixedIncome> FixedIncomes { get; set; }
+        public IEnumerable<FixedIncome> lcis { get; set; }
+        public IEnumerable<FixedIncome> cbs { get; set; }
     }
 }
