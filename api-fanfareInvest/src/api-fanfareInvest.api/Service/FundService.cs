@@ -1,5 +1,5 @@
 ﻿using api_fanfareInvest.api.Data.Interface;
-using api_fanfareInvest.api.IService;
+using api_fanfareInvest.api.Service.IService;
 using api_fanfareInvest.api.Model;
 
 namespace api_fanfareInvest.api.Service

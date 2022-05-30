@@ -1,6 +1,5 @@
-﻿using api_fanfareInvest.api.IService;
+﻿using api_fanfareInvest.api.Service.IService;
 using api_fanfareInvest.api.Model;
-using api_fanfareInvest.api.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_fanfareInvest.api.Controllers
@@ -28,7 +27,7 @@ namespace api_fanfareInvest.api.Controllers
 
         [HttpGet]
         [Route("/direct-treasury/Get")]
-        public async Task<ActionResult> GetTirectTreasury([FromServices] ITirectTreasuryService service)
+        public async Task<ActionResult> GetTirectTreasury([FromServices] IDirectTreasuryService service)
         {
             Task<IList<DirectTreasury>> response = service.Get();
             return Ok(response);

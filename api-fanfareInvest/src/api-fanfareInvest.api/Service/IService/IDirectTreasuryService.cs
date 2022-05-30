@@ -2,7 +2,7 @@
 
 namespace api_fanfareInvest.api.Service.IService
 {
-    public interface ITirectTreasuryService
+    public interface IDirectTreasuryService
     {
         Task<IList<DirectTreasury>> Get();
     }
