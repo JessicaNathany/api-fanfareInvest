@@ -17,67 +17,53 @@ namespace api_fanfareInvest.api.Service
             var fixedIncomes = new List<FixedIncome>();
             var fixedIncome = new FixedIncome();
 
-            var fixedIncomeResponse = await _fixedIncomeRepository.GetAsync();
+            var fixedIncomeResponses = await _fixedIncomeRepository.Get();
+      
 
-            if (fixedIncomeResponse == null)
-                return fixedIncomes;
+            foreach (var item in fixedIncomeResponses.SelectMany(s => s.lcis))
+            {
+                fixedIncomes.Add(new FixedIncome
+                {
+                    InvestedCapital = item.InvestedCapital,
+                    CurrentCapital = item.CurrentCapital,
+                    Quantity = item.Quantity,
+                    DueDate = item.DueDate,
+                    Iof = item.Iof,
+                    OtherTaxes = item.OtherTaxes,
+                    Taxes = item.Taxes,
+                    Index = item.Index,
+                    Type = item.Type,
+                    Name = item.Name,
+                    FGC = item.FGC,
+                    OperationDate = item.OperationDate,
+                    UnitPrice = item.UnitPrice,
+                    Market = item.Market
 
-            AssociateLCIs(fixedIncome, fixedIncomeResponse, fixedIncomes);
-            AssociateCDBs(fixedIncome, fixedIncomeResponse, fixedIncomes);
+                });
+                foreach (var item1 in fixedIncomeResponses.SelectMany(s => s.cbs))
+                {
+                    fixedIncomes.Add(new FixedIncome
+                    {
+                        InvestedCapital = item1.InvestedCapital,
+                        CurrentCapital = item1.CurrentCapital,
+                        Quantity = item1.Quantity,
+                        DueDate = item1.DueDate,
+                        Iof = item1.Iof,
+                        OtherTaxes = item1.OtherTaxes,
+                        Taxes = item1.Taxes,
+                        Index = item1.Index,
+                        Type = item1.Type,
+                        Name = item1.Name,
+                        FGC = item1.FGC,
+                        OperationDate = item1.OperationDate,
+                        UnitPrice = item1.UnitPrice,
+                        Market = item1.Market
 
+                    });
+                }
+               
+            }            
             return fixedIncomes;
-        }
-
-        private static void AssociateLCIs(FixedIncome fixedIncome, IEnumerable<Response.FixedIncomeResponse> fixedIncomeResponse, List<FixedIncome> fixedIncomes)
-        {
-            foreach (var fixedIncomeRepository in fixedIncomeResponse)
-            {
-                foreach (var item in fixedIncomeRepository.FixedIncomesLCI)
-                {
-                    fixedIncome.InvestedCapital = item.InvestedCapital;
-                    fixedIncome.CurrentCapital = item.CurrentCapital;
-                    fixedIncome.Quantity = item.Quantity;
-                    fixedIncome.DueDate = item.DueDate;
-                    fixedIncome.Iof = item.Iof;
-                    fixedIncome.OtherTaxes = item.OtherTaxes;
-                    fixedIncome.Taxes = item.Taxes;
-                    fixedIncome.Index = item.Index;
-                    fixedIncome.Type = item.Type;
-                    fixedIncome.Name = item.Name;
-                    fixedIncome.FGC = item.FGC;
-                    fixedIncome.OperationDate = item.OperationDate;
-                    fixedIncome.UnitPrice = item.UnitPrice;
-                    fixedIncome.Market = item.Market;
-                }
-
-                fixedIncomes.Add(fixedIncome);
-            }
-        }
-
-        private static void AssociateCDBs(FixedIncome fixedIncome, IEnumerable<Response.FixedIncomeResponse> fixedIncomeResponse, List<FixedIncome> fixedIncomes)
-        {
-            foreach (var fixedIncomeRepository in fixedIncomeResponse)
-            {
-                foreach (var item in fixedIncomeRepository.FixedIncomesCDB)
-                {
-                    fixedIncome.InvestedCapital = item.InvestedCapital;
-                    fixedIncome.CurrentCapital = item.CurrentCapital;
-                    fixedIncome.Quantity = item.Quantity;
-                    fixedIncome.DueDate = item.DueDate;
-                    fixedIncome.Iof = item.Iof;
-                    fixedIncome.OtherTaxes = item.OtherTaxes;
-                    fixedIncome.Taxes = item.Taxes;
-                    fixedIncome.Index = item.Index;
-                    fixedIncome.Type = item.Type;
-                    fixedIncome.Name = item.Name;
-                    fixedIncome.FGC = item.FGC;
-                    fixedIncome.OperationDate = item.OperationDate;
-                    fixedIncome.UnitPrice = item.UnitPrice;
-                    fixedIncome.Market = item.Market;
-                }
-
-                fixedIncomes.Add(fixedIncome);
-            }
         }
     }
 }
