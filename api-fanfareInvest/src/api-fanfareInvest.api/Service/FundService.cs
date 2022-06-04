@@ -16,12 +16,11 @@ namespace api_fanfareInvest.api.Service
             var funds = new List<Fund>();
             var fund = new Fund();
 
-            var fundsResponse =  await _fundRepository.GetAsync();
+            var fundsRepository =  await _fundRepository.GetAsync();
 
-            if (fundsResponse == null)
-                funds = null;
+            if (fundsRepository == null) funds = null;
 
-            foreach (var fundRepository in fundsResponse)
+            foreach (var fundRepository in fundsRepository)
             {
                 foreach (var itemFund in fundRepository.Funds)
                 {
@@ -30,10 +29,10 @@ namespace api_fanfareInvest.api.Service
                     fund.UnitPrice = itemFund.UnitPrice;
                     fund.InvestedCapital = itemFund.InvestedCapital;
                     fund.CurrentCapital = itemFund.CurrentCapital;
+
+                    funds.Add(fund);
                 }
             }
-
-            funds.Add(fund);
 
            return funds;
         }

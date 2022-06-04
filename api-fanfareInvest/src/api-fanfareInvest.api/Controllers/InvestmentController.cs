@@ -11,9 +11,9 @@ namespace api_fanfareInvest.api.Controllers
 
         [HttpGet]
         [Route("/investiment/GetAll")]
-        public async Task<ActionResult> GetAllInvestiments([FromServices] IFundService service)
+        public async Task<ActionResult> GetAllInvestiments([FromServices] IInvestmentServices service)
         {
-            Task<IList<Fund>> response = service.Get(); // refatorar para trazer todos investimentos
+            Task<IList<InvestmentPortfolio>> response = service.GetAll();
             return Ok(response);
         }
 

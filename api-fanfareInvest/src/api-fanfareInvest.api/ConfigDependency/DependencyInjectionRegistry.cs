@@ -1,6 +1,4 @@
-﻿
-
-using api_fanfareInvest.api.Data.Interface;
+﻿using api_fanfareInvest.api.Data.Interface;
 using api_fanfareInvest.api.Data.Repository;
 using api_fanfareInvest.api.Service;
 using api_fanfareInvest.api.Service.IService;
@@ -14,7 +12,7 @@ namespace api_fanfareInvest.api.ConfigDependency
             service.AddScoped<IFundService, FundService>();
             service.AddScoped<IFundRepository, FundRepository>();
             service.AddScoped<IDirectTreasuryService, DirectTreasuryService>();
-            //service.AddScoped<IInvestmentServices, InvestmentServices>();
+            service.AddScoped<IInvestmentServices, InvestmentServices>();
             service.AddScoped<IDirectTreasuryRepository, DirectTreasuryRepository>();
             service.AddScoped<IFixedIncomeRepository, FixedIncomeRepository>();
             service.AddScoped<IVariableIncomeService, VariableIncomeService>();
