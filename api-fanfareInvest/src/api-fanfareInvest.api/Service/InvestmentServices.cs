@@ -19,14 +19,44 @@ namespace api_fanfareInvest.api.Service.IService
             _variableIncomeService = variableIncomeService;
             _fundService = fundService;
         }
-        Task<IList<InvestmentPortfolio>> IInvestmentServices.GetAll()
+
+        public async Task<IList<InvestmentPortfolio>> GetAll()
         {
             var listInvestimentPortfolio = new List<InvestmentPortfolio>();
             var portfolio = new InvestmentPortfolio();
 
-            // criar métodos separados privado para trazer todos os invesitmntos separados
+            var directTreasuries = GetDirectTreasury();
+            var fixedIncomes = GetFixedIncome();
+            var variableIncomes = GetVariableIncome();
+            var funds = GetFund();
+
+            foreach (var itemInvestimentPortfolio in listInvestimentPortfolio)
+            {
+
+            }
+
 
             return listInvestimentPortfolio;
+        }
+
+        private async Task<IEnumerable<DirectTreasury>> GetDirectTreasury()
+        {
+            return await _directTreasuryService.GetAsync();
+        }
+
+        private async Task<IEnumerable<FixedIncome>> GetFixedIncome()
+        {
+          return await _fixedIncomeService.GetAsync();
+        }
+
+        private async Task<IEnumerable<VariableIncome>> GetVariableIncome()
+        {
+            return await _variableIncomeService.GetAsync();
+        }
+
+        private async Task<IEnumerable<Fund>> GetFund()
+        {
+            return await _fundService.GetAsync();
         }
     }
 }

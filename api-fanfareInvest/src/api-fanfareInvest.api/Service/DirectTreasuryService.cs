@@ -13,7 +13,7 @@ namespace api_fanfareInvest.api.Service
             _directTreasuryRepository = directTreasuryRepository;
         }
         
-        public async Task<IList<DirectTreasury>> Get()
+        public async Task<IEnumerable<DirectTreasury>> GetAsync()
         {
             var listDirectTreasury = new List<DirectTreasury>();
             var directTreasury = new DirectTreasury();
@@ -26,7 +26,9 @@ namespace api_fanfareInvest.api.Service
             return AssociateDirectTreasury(listDirectTreasury, directTreasury, listDirectTreasuryrepository);
         }
 
-        private static IList<DirectTreasury> AssociateDirectTreasury(List<DirectTreasury>? listDirectTreasury, DirectTreasury directTreasury, IList<Response.DirectTreasuryResponse> listDirectTreasuryrepository)
+        private static IList<DirectTreasury> AssociateDirectTreasury(List<DirectTreasury>? listDirectTreasury, 
+                                                                    DirectTreasury directTreasury, 
+                                                                    IList<Response.DirectTreasuryResponse> listDirectTreasuryrepository)
         {
             foreach (var directTreasuryItem in listDirectTreasuryrepository)
             {

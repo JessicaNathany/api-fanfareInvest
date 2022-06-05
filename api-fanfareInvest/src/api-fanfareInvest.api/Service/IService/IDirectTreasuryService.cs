@@ -4,6 +4,6 @@ namespace api_fanfareInvest.api.Service.IService
 {
     public interface IDirectTreasuryService
     {
-        Task<IList<DirectTreasury>> Get();
+        Task<IEnumerable<DirectTreasury>> GetAsync();
     }
 }

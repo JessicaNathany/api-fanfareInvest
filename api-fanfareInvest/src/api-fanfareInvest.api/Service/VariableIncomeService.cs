@@ -11,7 +11,7 @@ namespace api_fanfareInvest.api.Service
         {
             _variableIncomeRepository = variableIncomeRepository;
         }
-        public async Task<IEnumerable<VariableIncome>> Get()
+        public async Task<IEnumerable<VariableIncome>> GetAsync()
         {
             var variableIncomes = new List<VariableIncome>();
             var variableIncome = new VariableIncome();

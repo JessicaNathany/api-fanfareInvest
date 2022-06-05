@@ -11,7 +11,7 @@ namespace api_fanfareInvest.api.Service
         {
             _fundRepository = fundRepository;
         }
-        public async Task<IList<Fund>> Get()
+        public async Task<IEnumerable<Fund>> GetAsync()
         {
             var funds = new List<Fund>();
             var fund = new Fund();
