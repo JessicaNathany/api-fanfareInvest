@@ -21,7 +21,7 @@ namespace api_fanfareInvest.api.Controllers
         [Route("/fund/Get")]
         public async Task<ActionResult> GetFund([FromServices] IFundService service)
         {
-            Task<IList<Fund>> response = service.Get();
+            Task<IEnumerable<Fund>>? response = service.GetAsync();
             return Ok(response);
         }
 
@@ -29,7 +29,7 @@ namespace api_fanfareInvest.api.Controllers
         [Route("/direct-treasury/Get")]
         public async Task<ActionResult> GetTirectTreasury([FromServices] IDirectTreasuryService service)
         {
-            Task<IList<DirectTreasury>> response = service.Get();
+            var response = service.GetAsync();
             return Ok(response);
         }
 
@@ -37,7 +37,7 @@ namespace api_fanfareInvest.api.Controllers
         [Route("/variable-income/Get")]
         public async Task<ActionResult> GetVariableIncome([FromServices] IVariableIncomeService service)
         {
-            Task<IEnumerable<VariableIncome>> response = service.Get();
+            Task<IEnumerable<VariableIncome>> response = service.GetAsync();
             return Ok(response);
         }
 
