@@ -47,13 +47,13 @@ api-fanfareInvest this APIs investiment consulting. 💵​📈​
 	- Get invetiments Funds
 	- Investing Fixed Income is a POST
 	- Investing Funds imobiliário is a POST
-	- Rescue invetiments
+	- GET Rescue invetiments
 	
 2. The application should have english code
 3. Should have unit test for rules below
   - The user cannot  rescue the investiment in less than a month for all
 	- The user cannot investing bonds that
-	- Usuário não pode investir em investimento that does not fit your profile
+	- User não pode investir em investimento that does not fit your profile
 	- Rescue calc
 		- If the date due date the investiment is than more that six month, so descount twent percent (20%) the yours yield
 		- If the date due date the investiment is than more that twelve month, so descount ten percent (10%) the yours yield
