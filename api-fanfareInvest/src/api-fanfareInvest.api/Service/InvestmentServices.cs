@@ -20,23 +20,24 @@ namespace api_fanfareInvest.api.Service.IService
             _fundService = fundService;
         }
 
-        public async Task<IList<InvestmentPortfolio>> GetAll()
+        public async Task<IEnumerable<InvestmentPortfolio>> GetAll()
         {
             var listInvestimentPortfolio = new List<InvestmentPortfolio>();
             var portfolio = new InvestmentPortfolio();
 
-            var directTreasuries = GetDirectTreasury();
-            var fixedIncomes = GetFixedIncome();
-            var variableIncomes = GetVariableIncome();
-            var funds = GetFund();
+            var directTreasuries = GetDirectTreasury().Result.ToList();
+            var fixedIncomes = GetFixedIncome().Result.ToList();
+            var variableIncomes = GetVariableIncome().Result.ToList();
+            var funds = GetFund().Result.ToList();
 
-            foreach (var itemInvestimentPortfolio in listInvestimentPortfolio)
-            {
+            portfolio.Guid = Guid.NewGuid();
+            portfolio.DirectTreasuries = directTreasuries;
+            portfolio.FixedIncomes = fixedIncomes;
+            portfolio.Funds = funds;
+            portfolio.VariableIncomes = variableIncomes;
+            listInvestimentPortfolio.Add(portfolio);
 
-            }
-
-
-            return listInvestimentPortfolio;
+            return listInvestimentPortfolio.ToList();
         }
 
         private async Task<IEnumerable<DirectTreasury>> GetDirectTreasury()
@@ -46,7 +47,7 @@ namespace api_fanfareInvest.api.Service.IService
 
         private async Task<IEnumerable<FixedIncome>> GetFixedIncome()
         {
-          return await _fixedIncomeService.GetAsync();
+            return await _fixedIncomeService.GetAsync();
         }
 
         private async Task<IEnumerable<VariableIncome>> GetVariableIncome()

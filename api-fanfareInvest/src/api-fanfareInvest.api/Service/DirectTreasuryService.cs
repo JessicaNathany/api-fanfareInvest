@@ -1,5 +1,6 @@
 ﻿using api_fanfareInvest.api.Data.Interface;
 using api_fanfareInvest.api.Model;
+using api_fanfareInvest.api.Response;
 using api_fanfareInvest.api.Service.IService;
 
 namespace api_fanfareInvest.api.Service
@@ -20,15 +21,14 @@ namespace api_fanfareInvest.api.Service
 
             var listDirectTreasuryrepository = await _directTreasuryRepository.GetAsync();
 
-            if (listDirectTreasuryrepository == null)
-                return listDirectTreasury = null;
+            if (listDirectTreasuryrepository == null) return listDirectTreasury = null;
 
             return AssociateDirectTreasury(listDirectTreasury, directTreasury, listDirectTreasuryrepository);
         }
 
         private static IList<DirectTreasury> AssociateDirectTreasury(List<DirectTreasury>? listDirectTreasury, 
                                                                     DirectTreasury directTreasury, 
-                                                                    IList<Response.DirectTreasuryResponse> listDirectTreasuryrepository)
+                                                                    IList<DirectTreasuryResponse> listDirectTreasuryrepository)
         {
             foreach (var directTreasuryItem in listDirectTreasuryrepository)
             {

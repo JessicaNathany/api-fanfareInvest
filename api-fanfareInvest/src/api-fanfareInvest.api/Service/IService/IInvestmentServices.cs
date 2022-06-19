@@ -4,6 +4,6 @@ namespace api_fanfareInvest.api.Service.IService
 {
     public interface IInvestmentServices
     {
-        Task<IList<InvestmentPortfolio>> GetAll();
+        Task<IEnumerable<InvestmentPortfolio>> GetAll();
     }
 }
