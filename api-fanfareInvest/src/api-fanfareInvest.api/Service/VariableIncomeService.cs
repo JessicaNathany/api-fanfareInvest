@@ -17,6 +17,7 @@ namespace api_fanfareInvest.api.Service
             var variableIncome = new VariableIncome();
 
             var variableIncomeResponse = await _variableIncomeRepository.GetAsync();
+
             foreach (var item in variableIncomeResponse.SelectMany(s => s.VariableIncomes))
             {
                 variableIncomes.Add(new VariableIncome
