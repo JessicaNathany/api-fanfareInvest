@@ -14,9 +14,9 @@ api-fanfareInvest esta API consulta investimentos. 💵​📈​
 	- Usuário não pode resgatar o investimento em menos de 1 mês (TODOS)
 	- Usuário não pode investir em algum título que não esteja adequado ao seu perfil
 	- Calculo do resgate
-		- Se a data vencimento do titulo for maior que 6 meses, então desconta 20% do rendimento
-		- Se a data vencimento do titulo for maior que 12 meses, então desconta 10% do rendimento
-		- Se a data vencimento do titulo for igual ao vencimento, então desconta 5% do rendimento
+		- Se a data vencimento do titulo for maior que 6 meses, então desconta 20% do rendimento de IR
+		- Se a data vencimento do titulo for maior que 12 meses, então desconta 10% do rendimento de IR
+		- Se a data vencimento do titulo for igual ao vencimento, então desconta 5% do rendimento de IR
 	
 	- O usuário não deverá investir menos que o valor mínimo de cada título	
 		
@@ -55,9 +55,9 @@ api-fanfareInvest this APIs investiment consulting. 💵​📈​
 	- The user cannot investing bonds that
 	- The user cannot investing that does not fit your profile
 	- Rescue calc
-		- If the date due date the investiment is than more that six month, so descount twent percent (20%) the yours yield
-		- If the date due date the investiment is than more that twelve month, so descount ten percent (10%) the yours yield
-		- If the date due date the investiment is equal due date all, so descount five percent (5%) the yours yield
+		- If the date due date the investiment is than more that six month, so descount twent percent (20%) the yours yield of IR
+		- If the date due date the investiment is than more that twelve month, so descount ten percent (10%) the yours yield of IR
+		- If the date due date the investiment is equal due date all, so descount five percent (5%) the yours yield of IR
 	
 4. The user cannot investing less that the minium value each investiment   
 5. This application should be publish in Docker container and create the Dockerfile, and available here
