@@ -46,7 +46,7 @@ api-fanfareInvest this APIs investiment consulting. 💵​📈​
 	- Get invetiments Variable Rent
 	- Get invetiments Funds
 	- Investing Fixed Income is a POST
-	- Investing Funds imobiliário is a POST
+	- Investing Funds Property is a POST
 	- GET Rescue invetiments
 	
 2. The application should have english code
