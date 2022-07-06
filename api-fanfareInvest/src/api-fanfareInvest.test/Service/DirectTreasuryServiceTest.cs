@@ -5,24 +5,34 @@ using Moq;
 using System.Collections.Generic;
 using Xunit;
 using FizzWare.NBuilder;
+using api_fanfareInvest.api.Response;
+using System.Threading.Tasks;
+using api_fanfareInvest.api.Service.IService;
+using System;
 
 namespace api_fanfareInvest.test.Service
 {
     public class DirectTreasuryServiceTest
     {
-        private readonly IDirectTreasuryRepository _directTreasuryRepository;
-
+        private readonly IDirectTreasuryService _service;
         public DirectTreasuryServiceTest()
         {
             var mockDirectTreasury = MockDirectTresuaryRepository();
 
-            var service = new DirectTreasuryService(mockDirectTreasury.Object);
+            _service = new DirectTreasuryService(mockDirectTreasury.Object);
         }
 
         [Fact]
-        public void Should_not_redeem_direct_treasury_for_less_than_one_month()
+        public async void Should_result_direct_treasury_not_null()
         {
+            var result = await _service.GetAsync();
+            Assert.NotNull(result);
+        }
 
+        [Fact]
+        public async void Should_not_redeem_direct_treasury_for_less_than_one_month()
+        {
+            var result = await _service.GetAsync();
         }
 
         [Fact]
@@ -47,17 +57,33 @@ namespace api_fanfareInvest.test.Service
         {
             var directTreasuryMock = new Mock<IDirectTreasuryRepository>();
 
-            var listDirectTreasury = Builder<DirectTreasury>.CreateListOfSize(1).All().Build();
+            var listDirectTreasury = new List<DirectTreasury>()
+            {
+                new DirectTreasury
+                {
+                    CurrentCapital = 1060,
+                    DueDate = DateTime.Now.AddYears(5),
+                    FGC = true,
+                    InvestedCapital = 1047,
+                    Iof = 0,
+                    IR = 22,
+                    Liquidity = "D+1",
+                    Quantity = 30,
+                    Market = "primary",
+                    OperationDate = DateTime.Now,
+                    UnitPrice = 31.40,
+                    OtherTaxes = 0,
+                    Taxes = 0,
+                    Type = "IPCA + 2026"
+                }
+            };
 
+            var listDirectTreasuryResponse = Builder<DirectTreasuryResponse>
+                                        .CreateListOfSize(1)
+                                        .All()
+                                        .With(d=> d.DirectTreasurys = listDirectTreasury).Build();
 
-            //var listDirectTreasury = new List<DirectTreasury>()
-            //{
-
-            //}
-
-
-            //directTreasuryMock.Setup(d => d.GetAsync()).Returns(listDirectTreasury);
-
+            directTreasuryMock.Setup(d => d.GetAsync()).Returns(Task.FromResult(listDirectTreasuryResponse));
             return directTreasuryMock;
         }
     }
