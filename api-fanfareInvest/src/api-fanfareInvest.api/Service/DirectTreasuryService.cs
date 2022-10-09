@@ -59,10 +59,5 @@ namespace api_fanfareInvest.api.Service
                 listDirectTreasury.Add(directTreasury);
             }
         }
-
-        public Task<OrderModel> PostAsync(int idTitle, DateTime currentDate)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

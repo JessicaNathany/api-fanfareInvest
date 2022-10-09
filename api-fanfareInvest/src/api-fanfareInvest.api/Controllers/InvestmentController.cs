@@ -5,53 +5,44 @@ using Microsoft.AspNetCore.Mvc;
 namespace api_fanfareInvest.api.Controllers
 {
     [ApiController]
-    [Route("api-invest/investiment")]
+    [Route("api-invest/investiment/")]
     public class InvestmentController : ControllerBase
     {
-
         [HttpGet]
-        [Route("/investiment/GetAll")]
-        public async Task<ActionResult> GetAsyncAllInvestiments([FromServices] IInvestmentServices service)
+        [Route("GetAll")]
+        public async Task<ActionResult> GetAllInvestimentsAsync([FromServices] IInvestmentServices service)
         {
             Task<IEnumerable<InvestmentPortfolio>> response = service.GetAll();
             return Ok(response);
         }
 
         [HttpGet]
-        [Route("/fund/Get")]
-        public async Task<ActionResult> GetAsyncFund([FromServices] IFundService service)
+        [Route("fund/GetAll")]
+        public async Task<ActionResult> GetFundAsync([FromServices] IFundService service)
         {
             Task<IEnumerable<Fund>>? response = service.GetAsync();
             return Ok(response);
         }
 
         [HttpGet]
-        [Route("/direct-treasury/Get")]
-        public async Task<ActionResult> GetAsyncTirectTreasury([FromServices] IDirectTreasuryService service)
+        [Route("direct-treasury/GetAll")]
+        public async Task<ActionResult> GetTirectTreasuryAsync([FromServices] IDirectTreasuryService service)
         {
             var response = service.GetAsync();
             return Ok(response);
         }
 
-        [HttpPost]
-        [Route("/direct-treasury/Post")]
-        public async Task<ActionResult> PostAsyncTreasuryRedemption([FromBody] int idTitle, DateTime currentDate, [FromServices] IDirectTreasuryService service)
-        {
-            var response = service.PostAsync(idTitle, currentDate);
-            return Ok(response);
-        }
-
         [HttpGet]
-        [Route("/variable-income/Get")]
-        public async Task<ActionResult> GetAsyncVariableIncome([FromServices] IVariableIncomeService service)
+        [Route("variable-income/GetAll")]
+        public async Task<ActionResult> GetVariableIncomeAsync([FromServices] IVariableIncomeService service)
         {
             Task<IEnumerable<VariableIncome>> response = service.GetAsync();
             return Ok(response);
         }
 
         [HttpGet]
-        [Route("/fixed-income/Get")]
-        public async Task<ActionResult> GetAsyncFixedIncome([FromServices] IFixedIncomeService service)
+        [Route("fixed-income/GetAll")]
+        public async Task<ActionResult> GetFixedIncomeAsync([FromServices] IFixedIncomeService service)
         {
             Task<IEnumerable<FixedIncome>> response = service.GetAsync();
             return Ok(response);

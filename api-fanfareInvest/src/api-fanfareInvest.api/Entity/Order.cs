@@ -1,6 +1,6 @@
-﻿namespace api_fanfareInvest.api.Model
+﻿namespace api_fanfareInvest.api.Entity
 {
-    public class OrderModel
+    public class Order
     {
         public int IdOrder { get; set; }
         public DateTime OrderDateCreate { get; set; }
