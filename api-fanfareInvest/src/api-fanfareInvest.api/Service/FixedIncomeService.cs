@@ -16,7 +16,6 @@ namespace api_fanfareInvest.api.Service
         public async Task<IEnumerable<FixedIncome>> GetAsync()
         {
             var fixedIncomes = new List<FixedIncome>();
-            var fixedIncome = new FixedIncome();
 
             var fixedIncomeResponses = await _fixedIncomeRepository.GetAsync();
 

@@ -16,25 +16,24 @@ namespace api_fanfareInvest.api.Service
             var funds = new List<Fund>();
             var fund = new Fund();
 
-            var fundsRepository =  await _fundRepository.GetAsync();
+            var fundsRepository = await _fundRepository.GetAsync();
 
-            if (fundsRepository == null) funds = null;
+            if (fundsRepository == null)
+                return funds; 
 
-            foreach (var fundRepository in fundsRepository)
+            foreach (var itemFund in fundsRepository.SelectMany(x => x.Funds))
             {
-                foreach (var itemFund in fundRepository.Funds)
+                funds.Add(new Fund
                 {
-                    fund.Name = itemFund.Name;
-                    fund.Quantity = itemFund.Quantity;
-                    fund.UnitPrice = itemFund.UnitPrice;
-                    fund.InvestedCapital = itemFund.InvestedCapital;
-                    fund.CurrentCapital = itemFund.CurrentCapital;
-
-                    funds.Add(fund);
-                }
+                    Name = itemFund.Name,
+                    Quantity = itemFund.Quantity,
+                    UnitPrice = itemFund.UnitPrice,
+                    InvestedCapital = itemFund.InvestedCapital,
+                    CurrentCapital = itemFund.CurrentCapital,
+                });
             }
 
-           return funds;
+            return funds;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace api_fanfareInvest.api.Service.IService
 
         private async Task<IEnumerable<DirectTreasury>> GetDirectTreasury()
         {
-            return await _directTreasuryService.GetAsync();
+            return await _directTreasuryService.GetAllAsync();
         }
 
         private async Task<IEnumerable<FixedIncome>> GetFixedIncome()

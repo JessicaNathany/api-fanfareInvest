@@ -25,14 +25,14 @@ namespace api_fanfareInvest.test.Service
         [Fact]
         public async void Should_result_direct_treasury_not_null()
         {
-            var result = await _service.GetAsync();
+            var result = await _service.GetAllAsync();
             Assert.NotNull(result);
         }
 
         [Fact]
         public async void Should_not_redeem_direct_treasury_for_less_than_one_month()
         {
-            var result = await _service.GetAsync();
+            var result = await _service.GetAllAsync();
         }
 
         [Fact]

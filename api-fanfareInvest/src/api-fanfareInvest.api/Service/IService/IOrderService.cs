@@ -5,7 +5,7 @@ namespace api_fanfareInvest.api.Service.IService
 {
     public interface IOrderService
     {
-        Task<List<Order>> GetAllAsync();
+        Task<IEnumerable<Order>> GetAllAsync();
 
         Task<Order>GetByIdAsync(int idOrder);
 

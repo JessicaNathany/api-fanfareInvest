@@ -18,6 +18,9 @@ namespace api_fanfareInvest.api.Service
 
             var variableIncomeResponse = await _variableIncomeRepository.GetAsync();
 
+            if (variableIncomeResponse == null)
+                return variableIncomes;
+
             foreach (var item in variableIncomeResponse.SelectMany(s => s.VariableIncomes))
             {
                 variableIncomes.Add(new VariableIncome
@@ -29,8 +32,6 @@ namespace api_fanfareInvest.api.Service
                     UnitPrice = item.UnitPrice
                 });
             }
-
-            variableIncomes.Add(variableIncome);
 
             return variableIncomes;
         }

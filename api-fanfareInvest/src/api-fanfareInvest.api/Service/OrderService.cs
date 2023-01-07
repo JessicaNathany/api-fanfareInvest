@@ -18,28 +18,27 @@ namespace api_fanfareInvest.api.Service
             throw new NotImplementedException();
         }
 
-        public async Task<List<Order>> GetAllAsync()
+        public async Task<IEnumerable<Order>> GetAllAsync()
         {
             var orders = new List<Order>();
-            var order = new Order();
 
             var listResponse = await _orderRepository.GetAllAsync();
 
-            if (listResponse == null)
-                return orders;
+            if (listResponse == null) return orders;
 
-            foreach (var itemResponseOrder in listResponse.SelectMany(o => o.Orders))
+            foreach (var itemOrder in listResponse.SelectMany(o=> o.Orders))
             {
-                order.IdOrder = itemResponseOrder.IdOrder;
-                order.InvestmentName = itemResponseOrder.InvestmentName;
-                order.OrderDateCreate = itemResponseOrder.OrderDateCreate;
-                order.OrderStatus = itemResponseOrder.OrderStatus;
-                order.OrderTitle = itemResponseOrder.OrderTitle;
-                order.Quantity = itemResponseOrder.Quantity;
-                order.TotalPrice = itemResponseOrder.TotalPrice;
-                order.UnitPrice = order.UnitPrice;
-
-                orders.Add(order);
+                orders.Add(new Order
+                {
+                    IdOrder = itemOrder.IdOrder,
+                    InvestmentName = itemOrder.InvestmentName,
+                    OrderDateCreate = itemOrder.OrderDateCreate,
+                    OrderStatus = itemOrder.OrderStatus,
+                    OrderTitle = itemOrder.OrderTitle,
+                    Quantity = itemOrder.Quantity,
+                    TotalPrice = itemOrder.TotalPrice,
+                    UnitPrice = itemOrder.UnitPrice,
+                });
             }
 
             return orders;
