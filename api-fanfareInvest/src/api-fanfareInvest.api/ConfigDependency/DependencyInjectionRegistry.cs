@@ -20,6 +20,7 @@ namespace api_fanfareInvest.api.ConfigDependency
             service.AddScoped<IVariableIncomeRepository, VariableIncomeRepository>();
             service.AddScoped<IVariableIncomeRepository, VariableIncomeRepository>();
             service.AddScoped<IOrderService, OrderService>();
+            service.AddScoped<IOrderRepository, OrderRepository>();
         }
     }
 }

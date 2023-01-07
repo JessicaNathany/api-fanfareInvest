@@ -13,7 +13,7 @@ namespace api_fanfareInvest.api.Controllers
         [Route("GetAll")]
         public async Task<ActionResult> GetOrdersAsync([FromServices] IOrderService service)
         {
-            Task<IEnumerable<Order>> response = service.GetAllAsync();
+            Task<List<Order>> response = service.GetAllAsync();
             return Ok(response);
         }
 

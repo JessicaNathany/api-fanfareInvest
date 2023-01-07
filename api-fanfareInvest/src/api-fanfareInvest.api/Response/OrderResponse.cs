@@ -5,7 +5,6 @@ namespace api_fanfareInvest.api.Response
 {
     public class OrderResponse
     {
-        [JsonProperty("order")]
-        public IList<Order> Orders { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }
